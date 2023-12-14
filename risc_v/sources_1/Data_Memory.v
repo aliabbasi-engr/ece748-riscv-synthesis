@@ -22,7 +22,7 @@ module Data_Memory(clk,rst,WE,WD,A,RD);
 
     reg [31:0] mem [1023:0];
 
-    always @ (posedge clk)
+    always @ (negedge clk)
     begin
         if(WE)
             mem[A] <= WD;

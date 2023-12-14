@@ -22,7 +22,7 @@ module PC_Module(clk,rst,PC,PC_Next);
     output [31:0]PC;
     reg [31:0]PC;
 
-    always @(posedge clk)
+    always @(negedge clk)
     begin
         if(~rst)
             PC <= {32{1'b0}};

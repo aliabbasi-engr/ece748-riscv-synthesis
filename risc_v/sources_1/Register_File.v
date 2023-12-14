@@ -26,7 +26,7 @@ module Register_File(clk,rst,WE3,WD3,A1,A2,A3,RD1,RD2);
     reg [31:0] Register [31:0];
 
     // write to the Register[write_addr] synchronous to the clock edge
-    always @ (posedge clk) begin
+    always @ (negedge clk) begin
         if(WE3)
             Register[A3] <= WD3;
     end

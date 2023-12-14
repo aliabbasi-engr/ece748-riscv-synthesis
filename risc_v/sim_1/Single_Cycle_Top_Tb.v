@@ -67,7 +67,7 @@ module Single_Cycle_Top_Tb ();
         
             // do reset
             rst <= 1'b0;
-            #(3 * CLOCK_PULSE_WIDTH);
+            #(2 * CLOCK_PULSE_WIDTH);
             rst <=1'b1;
         
             // assign multiplier and multiplicand
