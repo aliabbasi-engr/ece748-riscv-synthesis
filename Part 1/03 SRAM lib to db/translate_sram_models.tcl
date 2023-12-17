@@ -1,0 +1,11 @@
+read_lib SRAM_32x64_1rw_FF_1p0V_25C.lib
+write_lib SRAM_32x64_1rw_FF_1p0V_25C_lib -format db -output SRAM_32x64_1rw_FF_1p0V_25C.db
+
+read_lib SRAM_32x64_1rw_SS_1p0V_25C.lib
+write_lib SRAM_32x64_1rw_SS_1p0V_25C_lib -format db -output SRAM_32x64_1rw_SS_1p0V_25C.db
+
+read_lib SRAM_32x64_1rw_TT_1p0V_25C.lib
+write_lib SRAM_32x64_1rw_TT_1p0V_25C_lib -format db -output SRAM_32x64_1rw_TT_1p0V_25C.db
+
+read_lib SRAM_32x64_1rw_TT_1p1V_25C.lib
+write_lib SRAM_32x64_1rw_TT_1p1V_25C_lib -format db -output SRAM_32x64_1rw_TT_1p1V_25C.db
