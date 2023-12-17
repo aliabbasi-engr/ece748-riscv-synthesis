@@ -62,10 +62,19 @@ module Single_Cycle_Top(clk,rst);
         .c(PCNext)
     );
     
-    Instruction_Memory Instruction_Memory(
+    /*Instruction_Memory Instruction_Memory(
                             .rst(rst),
                             .A(PC_Top),
                             .RD(RD_Instr)
+    );*/
+    
+    SRAM_32x64_1rw Instruction_Memory(
+        .clk0(clk),
+        .csb0(1'b0),
+        .web0(1'b1),
+        .addr0(PC_Top[31:2]),
+        .din0(0),
+        .dout0(RD_Instr)
     );
 
     Register_File Register_File(
@@ -118,13 +127,22 @@ module Single_Cycle_Top(clk,rst);
                             .ALUControl(ALUControl_Top)
     );
 
-    Data_Memory Data_Memory(
+    /*Data_Memory Data_Memory(
                         .clk(clk),
                         .rst(rst),
                         .WE(MemWrite),
                         .WD(RD2_Top),
                         .A(ALUResult),
                         .RD(ReadData)
+    );*/
+    
+    SRAM_32x64_1rw Data_Memory(
+        .clk0(clk),
+        .csb0(1'b0),
+        .web0(!MemWrite),
+        .addr0(ALUResult),
+        .din0(RD2_Top),
+        .dout0(ReadData)
     );
 
     Mux Mux_DataMemory_to_Register(
