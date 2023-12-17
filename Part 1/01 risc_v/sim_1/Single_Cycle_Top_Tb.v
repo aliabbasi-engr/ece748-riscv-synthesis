@@ -14,6 +14,8 @@
 
 `timescale 1ns/1ps
 
+`define NUM_SEQUENCE 3
+
 module Single_Cycle_Top_Tb ();
     
     parameter CLOCK_PULSE_WIDTH = 50;
@@ -63,7 +65,10 @@ module Single_Cycle_Top_Tb ();
     initial begin : tb_block_main
     
         reg [7:0] i;
-        for(i = 0; i < 3; i = i + 1) begin
+        reg num_mismatches;
+        num_mismatches = 0;
+        
+        for(i = 0; i < `NUM_SEQUENCE; i = i + 1) begin
         
             // do reset
             rst <= 1'b0;
@@ -79,6 +84,7 @@ module Single_Cycle_Top_Tb ();
             Single_Cycle_Top.Register_File.Register[2] = multiplicand;
         
             // wait enough time to perform multiplication
+            #(8 * CLOCK_PULSE_WIDTH)
             #(8 * CLOCK_PULSE_WIDTH * multiplier)
         
             // calculate expected result and read exact result from register file
@@ -94,9 +100,19 @@ module Single_Cycle_Top_Tb ();
             end
             else begin
                 $display("Result does not match the expected value!");
+                num_mismatches = num_mismatches + 1;
             end        
+        end 
+         
+        $display("-------------------------------------");
+        if(num_mismatches == 0) begin
+                $display("Return 1: No mismatches found!");
+        end
+        else begin
+                $display("Return 0: %0d mismatches found!", num_mismatches);
         end  
         $display("-------------------------------------");
+        
         $finish;
     end
     
