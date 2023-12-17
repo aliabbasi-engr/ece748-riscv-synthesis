@@ -1,0 +1,59 @@
+[2023-12-14 16:03:37.586848] WARNING: file globals.py: line 168: Failed to find coverage installation. This can be installed with pip3 install coverage
+
+[2023-12-14 16:03:38.123913] |==============================================================================|
+[2023-12-14 16:03:38.124165] |=========                      OpenRAM v1.2.42                       =========|
+[2023-12-14 16:03:38.124300] |=========                                                            =========|
+[2023-12-14 16:03:38.124426] |=========               VLSI Design and Automation Lab               =========|
+[2023-12-14 16:03:38.124549] |=========        Computer Science and Engineering Department         =========|
+[2023-12-14 16:03:38.124667] |=========            University of California Santa Cruz             =========|
+[2023-12-14 16:03:38.124782] |=========                                                            =========|
+[2023-12-14 16:03:38.124902] |=========          Usage help: openram-user-group@ucsc.edu           =========|
+[2023-12-14 16:03:38.125018] |=========        Development help: openram-dev-group@ucsc.edu        =========|
+[2023-12-14 16:03:38.125162] |=========                See LICENSE for license info                =========|
+[2023-12-14 16:03:38.125308] |==============================================================================|
+[2023-12-14 16:03:38.125468] ** Start: 12/14/2023 16:03:38
+[2023-12-14 16:03:38.125561] Technology: freepdk45
+[2023-12-14 16:03:38.125682] Total size: 2048 bits
+[2023-12-14 16:03:38.125804] Word size: 32
+Words: 64
+Banks: 1
+[2023-12-14 16:03:38.125937] RW ports: 1
+R-only ports: 0
+W-only ports: 0
+[2023-12-14 16:03:38.126068] DRC/LVS/PEX is only run on the top-level design to save run-time (inline_lvsdrc=True to do inline checking).
+[2023-12-14 16:03:38.126193] Characterization is disabled (using analytical delay models) (analytical_delay=False to simulate).
+[2023-12-14 16:03:38.126325] Words per row: 4
+[2023-12-14 16:03:38.126461] Output files are: 
+[2023-12-14 16:03:38.126586] /home/ali/OpenRAM/projects/SRAM_32x64_1rw/SRAM_32x64_1rw.lvs
+[2023-12-14 16:03:38.126709] /home/ali/OpenRAM/projects/SRAM_32x64_1rw/SRAM_32x64_1rw.sp
+[2023-12-14 16:03:38.126833] /home/ali/OpenRAM/projects/SRAM_32x64_1rw/SRAM_32x64_1rw.v
+[2023-12-14 16:03:38.126955] /home/ali/OpenRAM/projects/SRAM_32x64_1rw/SRAM_32x64_1rw.lib
+[2023-12-14 16:03:38.127063] /home/ali/OpenRAM/projects/SRAM_32x64_1rw/SRAM_32x64_1rw.py
+[2023-12-14 16:03:38.127170] /home/ali/OpenRAM/projects/SRAM_32x64_1rw/SRAM_32x64_1rw.html
+[2023-12-14 16:03:38.127275] /home/ali/OpenRAM/projects/SRAM_32x64_1rw/SRAM_32x64_1rw.log
+[2023-12-14 16:03:38.127378] /home/ali/OpenRAM/projects/SRAM_32x64_1rw/SRAM_32x64_1rw.lef
+[2023-12-14 16:03:38.127482] /home/ali/OpenRAM/projects/SRAM_32x64_1rw/SRAM_32x64_1rw.gds
+[2023-12-14 16:03:42.523140] ** Submodules: 4.4 seconds
+[2023-12-14 16:03:42.560907] ** Placement: 0.0 seconds
+[2023-12-14 16:10:18.459639] ** Routing: 395.9 seconds
+[2023-12-14 16:11:47.843386] ** Verification: 89.4 seconds
+[2023-12-14 16:11:47.843586] ** SRAM creation: 489.7 seconds
+[2023-12-14 16:11:47.843735] SP: Writing to /home/ali/OpenRAM/projects/SRAM_32x64_1rw/SRAM_32x64_1rw.sp
+[2023-12-14 16:11:47.953311] ** Spice writing: 0.1 seconds
+[2023-12-14 16:11:47.953625] DELAY: Writing stimulus...
+[2023-12-14 16:11:48.277415] ** DELAY: 0.3 seconds
+[2023-12-14 16:11:48.332264] GDS: Writing to /home/ali/OpenRAM/projects/SRAM_32x64_1rw/SRAM_32x64_1rw.gds
+[2023-12-14 16:11:48.526518] ** GDS: 0.2 seconds
+[2023-12-14 16:11:48.526783] LEF: Writing to /home/ali/OpenRAM/projects/SRAM_32x64_1rw/SRAM_32x64_1rw.lef
+[2023-12-14 16:11:48.547410] ** LEF: 0.0 seconds
+[2023-12-14 16:11:48.547613] LVS: Writing to /home/ali/OpenRAM/projects/SRAM_32x64_1rw/SRAM_32x64_1rw.lvs.sp
+[2023-12-14 16:11:48.610955] ** LVS writing: 0.1 seconds
+[2023-12-14 16:11:48.611200] LIB: Characterizing... 
+[2023-12-14 16:11:49.964040] ** Characterization: 1.4 seconds
+[2023-12-14 16:11:49.964477] Config: Writing to /home/ali/OpenRAM/projects/SRAM_32x64_1rw/SRAM_32x64_1rw.py
+[2023-12-14 16:11:49.964670] ** Config: 0.0 seconds
+[2023-12-14 16:11:49.965828] Datasheet: Writing to /home/ali/OpenRAM/projects/SRAM_32x64_1rw/SRAM_32x64_1rw.html
+[2023-12-14 16:11:49.967504] ** Datasheet: 0.0 seconds
+[2023-12-14 16:11:49.967715] Verilog: Writing to /home/ali/OpenRAM/projects/SRAM_32x64_1rw/SRAM_32x64_1rw.v
+[2023-12-14 16:11:49.968035] ** Verilog: 0.0 seconds
+[2023-12-14 16:11:49.969638] ** End: 491.8 seconds
