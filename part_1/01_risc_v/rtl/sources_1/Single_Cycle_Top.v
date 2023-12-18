@@ -24,9 +24,13 @@
 `include "PC_Adder.v"
 `include "Mux.v"*/
 
-module Single_Cycle_Top(clk,rst);
-
-    input clk,rst;
+module Single_Cycle_Top(
+    input clk,
+    input rst,
+    input im_web,
+    input [31:0] im_din,
+    output [31:0] dm_dout
+    );
 
     wire [31:0] PC_Top,RD_Instr,RD1_Top,Imm_Ext_Top,ALUResult,ReadData,PCPlus4,RD2_Top,SrcB,Result;
     wire RegWrite,MemWrite,ALUSrc,ResultSrc;
@@ -35,6 +39,8 @@ module Single_Cycle_Top(clk,rst);
     wire Zero;
     wire PCSrc;
     wire [31:0] PCTarget, PCNext;
+
+    assign dm_dout = ReadData;
 
     PC_Module PC(
         .clk(clk),
@@ -71,9 +77,9 @@ module Single_Cycle_Top(clk,rst);
     SRAM_32x64_1rw Instruction_Memory(
         .clk0(clk),
         .csb0(1'b0),
-        .web0(1'b1),
+        .web0(im_web),
         .addr0(PC_Top[31:2]),
-        .din0(0),
+        .din0(im_din),
         .dout0(RD_Instr)
     );
 

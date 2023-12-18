@@ -20,13 +20,20 @@ module Single_Cycle_Top_Tb ();
     
     parameter CLOCK_PULSE_WIDTH = 50;
     
-    reg clk=1'b1,rst;
+    reg clk = 1'b1;
+    reg rst = 1'b0;
+    wire im_web = 1'b1;
+    wire [31:0] im_din = 0;
+    wire [31:0] dm_dout;
     reg [31:0] multiplier, multiplicand, expected_result, result;
     
     // DUT instantiation
     Single_Cycle_Top Single_Cycle_Top(
                                 .clk(clk),
-                                .rst(rst)
+                                .rst(rst),
+                                .im_web(im_web),
+                                .im_din(im_din),
+                                .dm_dout(dm_dout)
     );
     
     initial begin
