@@ -25,10 +25,8 @@ module PC_Module(
     `endif
     input clk, rst,
     input [31:0] PC_Next,
-    output [31:0] PC
+    output reg [31:0] PC
     );
-        
-    reg [31:0] PC;
 
     always @(negedge clk)
     begin
