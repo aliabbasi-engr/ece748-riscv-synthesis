@@ -3,12 +3,14 @@
 # 
 # run dc_shell on command line with this tcl script passed
 # dc_shell -f dc_shell_syn_freepdk45.tcl
+# if dc_shell is already running
+# source dc_shell_syn_freepdk45.tcl
 
 # specify libraries
-set target_library "/home/v60304/mydata/04_syn_freepdk45/pdk_files/SRAM_32x64_1rw_TT_1p1V_25C.db /home/v60304/mydata/04_syn_freepdk45/pdk_files/gscl45nm.db"
+set target_library "~/mydata/04_syn_freepdk45/pdk_files/SRAM_32x64_1rw_TT_1p1V_25C.db ~/mydata/04_syn_freepdk45/pdk_files/gscl45nm.db"
 set symbol_library "generic.sdb"
 set synthetic_library "dw_foundation.sldb standard.sldb"
-set link_library "/home/v60304/mydata/04_syn_freepdk45/pdk_files/SRAM_32x64_1rw_TT_1p1V_25C.db /home/v60304/mydata/04_syn_freepdk45/pdk_files/gscl45nm.db dw_foundation.sldb standard.sldb"
+set link_library "~/mydata/04_syn_freepdk45/pdk_files/SRAM_32x64_1rw_TT_1p1V_25C.db ~/mydata/04_syn_freepdk45/pdk_files/gscl45nm.db dw_foundation.sldb standard.sldb"
 
 # read design
 # analysis and elaboration are done automatically
@@ -16,22 +18,22 @@ read_file {./rtl/sources_1} -autoread -format verilog -top Single_Cycle_Top
 
 # set design environment
 set_operating_conditions "typical"
-set_drive 0.1 [all_inputs]
-set_load 0.1 [all_outputs]
+set_drive 0.01 [all_inputs]
+set_load 0.01 [all_outputs]
 
 # set clock constraints
-create_clock -period 15 clk
-set_clock_latency 0.1 clk
-set_input_delay 1.2 -clock clk [all_inputs]
-set_output_delay 1.65 -clock clk [all_outputs]
+create_clock -period 3 clk
+set_clock_latency 0.01 clk
+set_input_delay 0.02 -clock clk [all_inputs]
+set_output_delay 0.01 -clock clk [all_outputs]
 
 # set design constraints
-set_max_transition 200 [get_designs Single_Cycle_Top]
-set_max_fanout 10 [all_inputs]
-set_fanout_load 8 [all_outputs]
-set high_fanout_net_threshold 10
-set_max_capacitance 4000 [all_outputs]
-set_max_area 40000
+set_max_transition 1 [get_designs Single_Cycle_Top]
+set_max_fanout 100 [all_inputs]
+set_fanout_load 0.001 [all_outputs]
+set high_fanout_net_threshold 100
+set_max_capacitance 10 [all_outputs]
+set_max_area 50000
 
 # compile
 compile
@@ -54,8 +56,5 @@ report_constraint
 # generate sdf file
 # write_sdf -version 2.1 -context verilog -load_delay cell ./Single_Cycle_Top_syn.sdf
 
-# generate verilog  netlist
+# generate verilog netlist
 # write -hierarchy -format verilog -output ./Single_Cycle_Top_syn.v
-
-
-
