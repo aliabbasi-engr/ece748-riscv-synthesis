@@ -30,16 +30,31 @@ module ALU(
     wire Cout;
     wire [31:0]Sum;
 
+    // Instance of DW01_addsub
+    DW01_addsub #(
+        .width(32)
+        ) DW01_addsub_inst (
+        `ifdef USE_POWER_PINS
+            .vdd(vdd),
+            .gnd(gnd),
+        `endif
+        .A(A),
+        .B(B),
+        .CI(1'b0),
+        .ADD_SUB(ALUControl[0]),
+        .SUM(Sum),
+        .CO(Cout)
+        );
+
     // add A to B/B-2s-complement
-    assign Sum = (ALUControl[0] == 1'b0) ? A + B :
-                                          (A + ((~B)+1)) ;
+    //assign Sum = (ALUControl[0] == 1'b0) ? A + B : (A + ((~B)+1)) ;
                                           
-    assign {Cout,Result} = (ALUControl == 3'b000) ? Sum :
-                           (ALUControl == 3'b001) ? Sum :
-                           (ALUControl == 3'b010) ? A & B :
-                           (ALUControl == 3'b011) ? A | B :
-                           (ALUControl == 3'b101) ? {{32{1'b0}},(Sum[31])} : // SLT instruction
-                           {33{1'b0}};
+    assign Result = (ALUControl == 3'b000) ? Sum :
+                    (ALUControl == 3'b001) ? Sum :
+                    (ALUControl == 3'b010) ? A & B :
+                    (ALUControl == 3'b011) ? A | B :
+                    (ALUControl == 3'b101) ? {{31{1'b0}},(Sum[31])} : // SLT instruction
+                    {32{1'b0}};
     
     // ALU arithmetic flags                       
     assign OverFlow = ((Sum[31] ^ A[31]) & 
