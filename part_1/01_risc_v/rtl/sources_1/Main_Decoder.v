@@ -14,12 +14,19 @@
 
 `timescale 1ns/1ps
 
-module Main_Decoder(Op,funct3,Zero,RegWrite,ImmSrc,ALUSrc,MemWrite,ResultSrc,PCSrc,ALUOp);
-    input [6:0] Op;
-    input [2:0] funct3;
-    input Zero;
-    output RegWrite,ALUSrc,MemWrite,ResultSrc,PCSrc;
-    output [1:0]ImmSrc,ALUOp;
+`include "global.vh"
+
+module Main_Decoder(
+    `ifdef USE_POWER_PINS
+        inout vdd,
+        inout gnd,
+    `endif
+    input [6:0] Op,
+    input [2:0] funct3,
+    input Zero,
+    output RegWrite, ALUSrc, MemWrite, ResultSrc, PCSrc,
+    output [1:0]ImmSrc, ALUOp
+    );
 
     // register file load_enable
     assign RegWrite = (Op == 7'b0000011) ? 1'b1 : // LB, LH, LW, LBU, LHU

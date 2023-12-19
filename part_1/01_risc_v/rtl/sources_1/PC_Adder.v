@@ -14,17 +14,23 @@
 
 `timescale 1ns/1ps
 
+`include "global.vh"
+
 // a behavioural implementation for a simple 32-bit adder used for PC
 // ports are assigned in the following manner at the top level:
 // a <= PC
 // b <= 'h4
 // PC_Next <= c
-module PC_Adder (a,b,c);
-
-    parameter IM_ADDR_WIDTH = 9;
-
-    input [31:0]a,b;
-    output [31:0]c;
+module PC_Adder#(
+    parameter IM_ADDR_WIDTH = 9
+    )(
+    `ifdef USE_POWER_PINS
+        inout vdd,
+        inout gnd,
+    `endif
+    input [31:0]a,b,
+    output [31:0]c
+    );
     
     assign c = (a + b) & {{32 - IM_ADDR_WIDTH{1'b0}}, {IM_ADDR_WIDTH{1'b1}}};
     

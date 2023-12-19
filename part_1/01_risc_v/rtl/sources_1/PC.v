@@ -14,13 +14,21 @@
 
 `timescale 1ns/1ps
 
+`include "global.vh"
+
 // this module registers the program counter and assigns
 // the next value from an external source (PC_Adder module) at the clock edge
-module PC_Module(clk,rst,PC,PC_Next);
-    input clk,rst;
-    input [31:0]PC_Next;
-    output [31:0]PC;
-    reg [31:0]PC;
+module PC_Module(
+    `ifdef USE_POWER_PINS
+        inout vdd,
+        inout gnd,
+    `endif
+    input clk, rst,
+    input [31:0] PC_Next,
+    output [31:0] PC
+    );
+        
+    reg [31:0] PC;
 
     always @(negedge clk)
     begin

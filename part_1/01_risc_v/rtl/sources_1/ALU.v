@@ -14,12 +14,18 @@
 
 `timescale 1ns/1ps
 
-module ALU(A,B,Result,ALUControl,OverFlow,Carry,Zero,Negative);
+`include "global.vh"
 
-    input [31:0]A,B;
-    input [2:0]ALUControl;
-    output Carry,OverFlow,Zero,Negative;
-    output [31:0]Result;
+module ALU(
+    `ifdef USE_POWER_PINS
+        inout vdd,
+        inout gnd,
+    `endif
+    input [31:0] A, B,
+    input [2:0] ALUControl,
+    output Carry, OverFlow, Zero, Negative,
+    output [31:0] Result
+    );
 
     wire Cout;
     wire [31:0]Sum;

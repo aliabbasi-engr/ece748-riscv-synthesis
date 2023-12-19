@@ -14,12 +14,18 @@
 
 `timescale 1ns/1ps
 
-// a simple multiplexer
-module Mux (a,b,s,c);
+`include "global.vh"
 
-    input [31:0]a,b;
-    input s;
-    output [31:0]c;
+// a simple multiplexer
+module Mux(
+    `ifdef USE_POWER_PINS
+        inout vdd,
+        inout gnd,
+    `endif
+    input [31:0] a, b,
+    input s,
+    output [31:0] c
+    );
 
     assign c = (~s) ? a : b ;
     

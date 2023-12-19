@@ -23,8 +23,13 @@
 `include "Data_Memory.v"
 `include "PC_Adder.v"
 `include "Mux.v"*/
+`include "global.vh"
 
 module Single_Cycle_Top(
+    `ifdef USE_POWER_PINS
+        inout vdd,
+        inout gnd,
+    `endif
     input clk,
     input rst,
     input im_web,
@@ -43,6 +48,10 @@ module Single_Cycle_Top(
     assign dm_dout = ReadData;
 
     PC_Module PC(
+        `ifdef USE_POWER_PINS
+            .vdd(vdd),
+            .gnd(gnd),
+        `endif
         .clk(clk),
         .rst(rst),
         .PC(PC_Top),
@@ -50,18 +59,30 @@ module Single_Cycle_Top(
     );
 
     PC_Adder PC_Adder_4(
-                    .a(PC_Top),
-                    .b(32'd4),
-                    .c(PCPlus4)
+        `ifdef USE_POWER_PINS
+            .vdd(vdd),
+            .gnd(gnd),
+        `endif
+        .a(PC_Top),
+        .b(32'd4),
+        .c(PCPlus4)
     );
     
     PC_Adder PC_Adder_Imm(
-                    .a(PC_Top),
-                    .b(Imm_Ext_Top),
-                    .c(PCTarget)
+        `ifdef USE_POWER_PINS
+            .vdd(vdd),
+            .gnd(gnd),
+        `endif
+        .a(PC_Top),
+        .b(Imm_Ext_Top),
+        .c(PCTarget)
     );
     
     Mux Mux_PCNext(
+        `ifdef USE_POWER_PINS
+            .vdd(vdd),
+            .gnd(gnd),
+        `endif
         .a(PCPlus4),
         .b(PCTarget),
         .s(PCSrc),
@@ -69,12 +90,20 @@ module Single_Cycle_Top(
     );
     
     /*Instruction_Memory Instruction_Memory(
-                            .rst(rst),
-                            .A(PC_Top),
-                            .RD(RD_Instr)
+        `ifdef USE_POWER_PINS
+            .vdd(vdd),
+            .gnd(gnd),
+        `endif
+        .rst(rst),
+        .A(PC_Top),
+        .RD(RD_Instr)
     );*/
     
     SRAM_32x64_1rw Instruction_Memory(
+        `ifdef USE_POWER_PINS
+            .vdd(vdd),
+            .gnd(gnd),
+        `endif
         .clk0(clk),
         .csb0(1'b0),
         .web0(im_web),
@@ -84,65 +113,93 @@ module Single_Cycle_Top(
     );
 
     Register_File Register_File(
-                            .clk(clk),
-                            .rst(rst),
-                            .WE3(RegWrite),
-                            .WD3(Result),
-                            .A1(RD_Instr[19:15]),
-                            .A2(RD_Instr[24:20]),
-                            .A3(RD_Instr[11:7]),
-                            .RD1(RD1_Top),
-                            .RD2(RD2_Top)
+        `ifdef USE_POWER_PINS
+            .vdd(vdd),
+            .gnd(gnd),
+        `endif
+        .clk(clk),
+        .rst(rst),
+        .WE3(RegWrite),
+        .WD3(Result),
+        .A1(RD_Instr[19:15]),
+        .A2(RD_Instr[24:20]),
+        .A3(RD_Instr[11:7]),
+        .RD1(RD1_Top),
+        .RD2(RD2_Top)
     );
 
     Sign_Extend Sign_Extend(
-                        .In(RD_Instr),
-                        .ImmSrc(ImmSrc),
-                        .Imm_Ext(Imm_Ext_Top)
+        `ifdef USE_POWER_PINS
+            .vdd(vdd),
+            .gnd(gnd),
+        `endif
+        .In(RD_Instr),
+        .ImmSrc(ImmSrc),
+        .Imm_Ext(Imm_Ext_Top)
     );
 
     Mux Mux_Register_to_ALU(
-                            .a(RD2_Top),
-                            .b(Imm_Ext_Top),
-                            .s(ALUSrc),
-                            .c(SrcB)
+        `ifdef USE_POWER_PINS
+            .vdd(vdd),
+            .gnd(gnd),
+        `endif
+        .a(RD2_Top),
+        .b(Imm_Ext_Top),
+        .s(ALUSrc),
+        .c(SrcB)
     );
 
     ALU ALU(
-            .A(RD1_Top),
-            .B(SrcB),
-            .Result(ALUResult),
-            .ALUControl(ALUControl_Top),
-            .OverFlow(),
-            .Carry(),
-            .Zero(Zero),
-            .Negative()
+        `ifdef USE_POWER_PINS
+            .vdd(vdd),
+            .gnd(gnd),
+        `endif
+        .A(RD1_Top),
+        .B(SrcB),
+        .Result(ALUResult),
+        .ALUControl(ALUControl_Top),
+        .OverFlow(),
+        .Carry(),
+        .Zero(Zero),
+        .Negative()
     );
 
     Control_Unit_Top Control_Unit_Top(
-                            .Op(RD_Instr[6:0]),
-                            .RegWrite(RegWrite),
-                            .ImmSrc(ImmSrc),
-                            .ALUSrc(ALUSrc),
-                            .MemWrite(MemWrite),
-                            .ResultSrc(ResultSrc),
-                            .Zero(Zero),
-                            .PCSrc(PCSrc),
-                            .funct3(RD_Instr[14:12]),
-                            .funct7(RD_Instr[31:25]),
-                            .ALUControl(ALUControl_Top)
+        `ifdef USE_POWER_PINS
+            .vdd(vdd),
+            .gnd(gnd),
+        `endif
+        .Op(RD_Instr[6:0]),
+        .RegWrite(RegWrite),
+        .ImmSrc(ImmSrc),
+        .ALUSrc(ALUSrc),
+        .MemWrite(MemWrite),
+        .ResultSrc(ResultSrc),
+        .Zero(Zero),
+        .PCSrc(PCSrc),
+        .funct3(RD_Instr[14:12]),
+        .funct7(RD_Instr[31:25]),
+        .ALUControl(ALUControl_Top)
     );
 
     /*Data_Memory Data_Memory(
-                        .clk(clk),
-                        .rst(rst),
-                        .WE(MemWrite),
-                        .WD(RD2_Top),
-                        .A(ALUResult),
-                        .RD(ReadData)
+        `ifdef USE_POWER_PINS
+            .vdd(vdd),
+            .gnd(gnd),
+        `endif
+        .clk(clk),
+        .rst(rst),
+        .WE(MemWrite),
+        .WD(RD2_Top),
+        .A(ALUResult),
+        .RD(ReadData)
     );*/
     
     SRAM_32x64_1rw Data_Memory(
+        `ifdef USE_POWER_PINS
+            .vdd(vdd),
+            .gnd(gnd),
+        `endif
         .clk0(clk),
         .csb0(1'b0),
         .web0(!MemWrite),
@@ -152,10 +209,14 @@ module Single_Cycle_Top(
     );
 
     Mux Mux_DataMemory_to_Register(
-                            .a(ALUResult),
-                            .b(ReadData),
-                            .s(ResultSrc),
-                            .c(Result)
+        `ifdef USE_POWER_PINS
+            .vdd(vdd),
+            .gnd(gnd),
+        `endif
+        .a(ALUResult),
+        .b(ReadData),
+        .s(ResultSrc),
+        .c(Result)
     );
 
 endmodule

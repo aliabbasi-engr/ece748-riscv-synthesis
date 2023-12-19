@@ -15,11 +15,15 @@
 `timescale 1ns/1ps
 
 // 256MB instruction memory (64 lines, 32-bit)
-module Instruction_Memory(rst,A,RD);
-
-  input rst;
-  input [31:0]A; // read address
-  output [31:0]RD; // read data
+module Instruction_Memory(
+    `ifdef USE_POWER_PINS
+        inout vdd,
+        inout gnd,
+    `endif
+    input rst,
+    input [31:0] A, // read address
+    output [31:0] RD // read data
+    );
 
   reg [31:0] mem [63:0];
   

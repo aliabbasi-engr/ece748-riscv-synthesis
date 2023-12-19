@@ -2,7 +2,7 @@
 // Words: 64
 // Word size: 32
 
-// `define PRINT_RW_LOG
+`include "global.vh"
 
 module SRAM_32x64_1rw(
 `ifdef USE_POWER_PINS

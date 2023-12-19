@@ -14,14 +14,20 @@
 
 `timescale 1ns/1ps
 
-// 128MB register file (32 lines, 32-bit)
-module Register_File(clk,rst,WE3,WD3,A1,A2,A3,RD1,RD2);
+`include "global.vh"
 
-    input clk,rst;
-    input WE3; // write_enable
-    input [4:0]A1,A2,A3; // read_addr0, read_addr1, write_addr
-    input [31:0]WD3; // write_data
-    output [31:0]RD1,RD2; // read_data0, read_data1
+// 128MB register file (32 lines, 32-bit)
+module Register_File(
+    `ifdef USE_POWER_PINS
+        inout vdd,
+        inout gnd,
+    `endif
+    input clk, rst,
+    input WE3, // write_enable
+    input [4:0] A1, A2, A3, // read_addr0, read_addr1, write_addr
+    input [31:0] WD3, // write_data
+    output [31:0] RD1, RD2 // read_data0, read_data1
+    );
 
     reg [31:0] Register [31:0];
 

@@ -14,12 +14,18 @@
 
 `timescale 1ns/1ps
 
-module ALU_Decoder(ALUOp,funct3,funct7,op,ALUControl);
+`include "global.vh"
 
-    input [1:0]ALUOp;
-    input [2:0]funct3;
-    input [6:0]funct7,op;
-    output [2:0]ALUControl;
+module ALU_Decoder(
+    `ifdef USE_POWER_PINS
+        inout vdd,
+        inout gnd,
+    `endif
+    input [1:0] ALUOp,
+    input [2:0] funct3,
+    input [6:0] funct7, op,
+    output [2:0] ALUControl
+    );
 
     // Method 1 
     // assign ALUControl = (ALUOp == 2'b00) ? 3'b000 :

@@ -14,11 +14,17 @@
 
 `timescale 1ns/1ps
 
-module Sign_Extend (In,Imm_Ext,ImmSrc);
+`include "global.vh"
 
-    input [31:0]In;
-    input [1:0] ImmSrc;
-    output [31:0]Imm_Ext;
+module Sign_Extend(
+    `ifdef USE_POWER_PINS
+        inout vdd,
+        inout gnd,
+    `endif
+    input [31:0] In,
+    input [1:0] ImmSrc,
+    output [31:0] Imm_Ext
+    );
 
     // assign output of the sign extender based on the instruction
     // then the sign bits are added to make the immediate width 32 bits with the same sign
