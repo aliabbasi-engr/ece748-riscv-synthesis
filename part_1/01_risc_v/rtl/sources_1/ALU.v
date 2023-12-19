@@ -14,7 +14,7 @@
 
 `timescale 1ns/1ps
 
-`include "global.vh"
+`include "global.v"
 
 module ALU(
     `ifdef USE_POWER_PINS

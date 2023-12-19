@@ -23,7 +23,7 @@
 `include "Data_Memory.v"
 `include "PC_Adder.v"
 `include "Mux.v"*/
-`include "global.vh"
+`include "global.v"
 
 module Single_Cycle_Top(
     `ifdef USE_POWER_PINS
@@ -107,7 +107,7 @@ module Single_Cycle_Top(
         .clk0(clk),
         .csb0(1'b0),
         .web0(im_web),
-        .addr0(PC_Top[31:2]),
+        .addr0(PC_Top[7:2]),
         .din0(im_din),
         .dout0(RD_Instr)
     );
@@ -203,7 +203,7 @@ module Single_Cycle_Top(
         .clk0(clk),
         .csb0(1'b0),
         .web0(!MemWrite),
-        .addr0(ALUResult),
+        .addr0(ALUResult[5:0]),
         .din0(RD2_Top),
         .dout0(ReadData)
     );

@@ -14,7 +14,7 @@
 
 `timescale 1ns/1ps
 
-`include "global.vh"
+`include "global.v"
 
 // a behavioural implementation for a simple 32-bit adder used for PC
 // ports are assigned in the following manner at the top level:

@@ -41,7 +41,7 @@
 //     
 //---------------------------------------------------------------------
 
-`include "global.vh"
+`include "global.v"
 
 module DW01_addsub #(
     parameter integer width = 4

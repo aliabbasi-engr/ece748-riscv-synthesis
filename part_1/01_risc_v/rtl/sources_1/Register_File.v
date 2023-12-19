@@ -14,7 +14,7 @@
 
 `timescale 1ns/1ps
 
-`include "global.vh"
+`include "global.v"
 
 // 128MB register file (32 lines, 32-bit)
 module Register_File(

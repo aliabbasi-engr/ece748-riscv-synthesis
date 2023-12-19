@@ -14,7 +14,7 @@
 
 `timescale 1ns/1ps
 
-`include "global.vh"
+`include "global.v"
 
 // this module registers the program counter and assigns
 // the next value from an external source (PC_Adder module) at the clock edge

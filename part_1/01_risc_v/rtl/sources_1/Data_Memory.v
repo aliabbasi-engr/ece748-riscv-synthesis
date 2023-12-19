@@ -14,6 +14,8 @@
 
 `timescale 1ns/1ps
 
+`include "global.v"
+
 module Data_Memory(
     `ifdef USE_POWER_PINS
         inout vdd,

@@ -14,6 +14,8 @@
 
 `timescale 1ns/1ps
 
+`include "global.v"
+
 // 256MB instruction memory (64 lines, 32-bit)
 module Instruction_Memory(
     `ifdef USE_POWER_PINS

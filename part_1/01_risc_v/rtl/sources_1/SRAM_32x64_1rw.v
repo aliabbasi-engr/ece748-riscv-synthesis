@@ -2,7 +2,7 @@
 // Words: 64
 // Word size: 32
 
-`include "global.vh"
+`include "global.v"
 
 module SRAM_32x64_1rw(
 `ifdef USE_POWER_PINS
@@ -47,7 +47,9 @@ module SRAM_32x64_1rw(
     web0_reg = web0;
     addr0_reg = addr0;
     din0_reg = din0;
-    #(T_HOLD) dout0 = 32'bx;
+    `ifdef SIMULATION
+	#(T_HOLD) dout0 = 32'bx;
+    `endif
     `ifdef PRINT_RW_LOG
         if ( !csb0_reg && web0_reg && VERBOSE )
             $display($time," Reading %m addr0=%b dout0=%b",addr0_reg,mem[addr0_reg]);

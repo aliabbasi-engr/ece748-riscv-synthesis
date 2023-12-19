@@ -16,7 +16,7 @@
 
 /*`include "ALU_Decoder.v"
 `include "Main_Decoder.v"*/
-`include "global.vh"
+`include "global.v"
 
 module Control_Unit_Top(
     `ifdef USE_POWER_PINS
