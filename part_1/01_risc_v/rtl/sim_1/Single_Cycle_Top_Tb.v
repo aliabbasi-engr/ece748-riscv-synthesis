@@ -14,6 +14,8 @@
 
 `timescale 1ns/1ps
 
+`include "global.vh"
+
 `define NUM_SEQUENCE 3
 
 module Single_Cycle_Top_Tb ();
@@ -29,11 +31,15 @@ module Single_Cycle_Top_Tb ();
     
     // DUT instantiation
     Single_Cycle_Top Single_Cycle_Top(
-                                .clk(clk),
-                                .rst(rst),
-                                .im_web(im_web),
-                                .im_din(im_din),
-                                .dm_dout(dm_dout)
+        `ifdef USE_POWER_PINS
+            .vdd(vdd),
+            .gnd(gnd),
+        `endif
+        .clk(clk),
+        .rst(rst),
+        .im_web(im_web),
+        .im_din(im_din),
+        .dm_dout(dm_dout)
     );
     
     initial begin
