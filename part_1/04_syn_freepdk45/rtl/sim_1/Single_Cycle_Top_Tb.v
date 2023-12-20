@@ -36,6 +36,10 @@ module Single_Cycle_Top_Tb ();
         .dm_dout(dm_dout)
     );
     
+    // initial begin
+        // $sdf_annotate("Single_Cycle_Top_syn.sdf", Single_Cycle_Top);
+    // end
+    
     initial begin
         $dumpfile("Single Cycle.vcd");
         $dumpvars(0);
