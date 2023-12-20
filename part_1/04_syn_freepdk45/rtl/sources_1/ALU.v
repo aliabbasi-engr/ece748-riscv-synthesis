@@ -28,7 +28,9 @@ module ALU(
     );
 
     wire Cout;
-    wire [31:0]Sum;
+    wire [31:0] Sum;
+    
+    // ---------- Single Design Ware add/sub module ----------
 
     // Instance of DW01_addsub
     DW01_addsub #(
@@ -45,6 +47,46 @@ module ALU(
         .SUM(Sum),
         .CO(Cout)
         );
+
+    // ---------- Separated DesignWare add/sub modules ----------
+
+    wire [31:0] add, sub;
+    wire add_co, sub_co;
+
+    // Instance of DW01_add
+    /*DW01_add #(
+        .width(32)
+        ) DW01_add_inst (
+        `ifdef USE_POWER_PINS
+            .vdd(vdd),
+            .gnd(gnd),
+        `endif
+        .A(A),
+        .B(B),
+        .CI(1'b0),
+        .SUM(add),
+        .CO(add_co)
+        );
+
+    // Instance of DW01_sub
+    DW01_sub #(
+        .width(32)
+        ) DW01_sub_inst (
+        `ifdef USE_POWER_PINS
+            .vdd(vdd),
+            .gnd(gnd),
+        `endif
+        .A(A),
+        .B(B),
+        .CI(1'b0),
+        .DIFF(sub),
+        .CO(sub_co)
+        );
+
+    assign Sum = (ALUControl[0] == 1'b0) ? add : sub;
+    assign Cout = (ALUControl[0] == 1'b0) ? add_co : sub_co;*/
+
+    // ---------- Behavioural add/sub operations ----------
 
     // add A to B/B-2s-complement
     //assign Sum = (ALUControl[0] == 1'b0) ? A + B : (A + ((~B)+1)) ;
