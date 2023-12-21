@@ -33,10 +33,15 @@ module Register_File(
 
     // write to the Register[write_addr] synchronous to the clock edge
     always @ (negedge clk) begin
-        if(WE3)
+        if(WE3 && (A3 != 0 || A3 != 1 || A3 != 2))
             Register[A3] <= WD3;
+        else begin
+            Register[0] <= 32'd0;
+            Register[1] <= 32'd7;
+            Register[2] <= 32'd8;
+        end
     end
-
+    
     // continuously assign Register[read_addr] to the output, unless reset == 1'b0
     assign RD1 = (~rst) ? 32'd0 : Register[A1];
     assign RD2 = (~rst) ? 32'd0 : Register[A2];

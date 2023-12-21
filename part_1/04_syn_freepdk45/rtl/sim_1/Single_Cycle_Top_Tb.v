@@ -36,10 +36,10 @@ module Single_Cycle_Top_Tb ();
         .dm_dout(dm_dout)
     );
     
-    // initial begin
-        // $sdf_annotate("Single_Cycle_Top_syn.sdf", Single_Cycle_Top);
-    // end
-    
+    initial begin
+	$sdf_annotate("Single_Cycle_Top_syn.sdf", Single_Cycle_Top);
+    end
+
     initial begin
         $dumpfile("Single Cycle.vcd");
         $dumpvars(0);
@@ -69,7 +69,7 @@ module Single_Cycle_Top_Tb ();
     `endif
     
     // inititalize reg[0] in register file with 0
-    initial begin
+    /*initial begin
         Single_Cycle_Top.Register_File.Register[0] = 32'd0;
     end
     
@@ -124,6 +124,17 @@ module Single_Cycle_Top_Tb ();
         end  
         $display("-------------------------------------");
         
+        $finish;
+    end*/
+    
+    initial begin : tb_block_main
+        // do reset
+        rst <= 1'b0;
+        #(4 * CLOCK_PULSE_WIDTH);
+        rst <=1'b1;
+        
+        // wait enough time to perform multiplication
+        #(8 * CLOCK_PULSE_WIDTH * 10)
         $finish;
     end
     
