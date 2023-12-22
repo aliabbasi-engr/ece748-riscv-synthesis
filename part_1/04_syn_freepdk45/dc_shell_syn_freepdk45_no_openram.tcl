@@ -7,10 +7,10 @@
 # source dc_shell_syn_freepdk45.tcl
 
 # specify libraries
-set target_library "~/mydata/04_syn_freepdk45/pdk_files/SRAM_32x64_1rw_TT_1p1V_25C.db ~/mydata/04_syn_freepdk45/pdk_files/gscl45nm.db"
+set target_library "~/mydata/04_syn_freepdk45/pdk_files/gscl45nm.db"
 set symbol_library "generic.sdb"
 set synthetic_library "dw_foundation.sldb standard.sldb"
-set link_library "~/mydata/04_syn_freepdk45/pdk_files/SRAM_32x64_1rw_TT_1p1V_25C.db ~/mydata/04_syn_freepdk45/pdk_files/gscl45nm.db dw_foundation.sldb standard.sldb"
+set link_library "~/mydata/04_syn_freepdk45/pdk_files/gscl45nm.db dw_foundation.sldb standard.sldb"
 
 # read design
 # analysis and elaboration are done automatically
@@ -23,7 +23,7 @@ set_drive 0.01 [all_inputs]
 set_load 0.01 [all_outputs]
 
 # set clock constraints
-create_clock -period 2.6 clk
+create_clock -period 3.5 clk
 set_clock_latency 0.01 clk
 set_input_delay 0.02 -clock clk [all_inputs]
 set_output_delay 0.01 -clock clk [all_outputs]
@@ -33,8 +33,8 @@ set_max_transition 2000 [get_designs Single_Cycle_Top]
 set_max_fanout 100 [all_inputs]
 set_fanout_load 0.001 [all_outputs]
 set high_fanout_net_threshold 100
-set_max_capacitance 50000 [all_outputs]
-set_max_area 50000
+set_max_capacitance 1000000 [all_outputs]
+set_max_area 150000
 
 # resolve multiple refenreces
 uniquify
@@ -52,13 +52,13 @@ compile
 # report_area
 # report_timing
 # report_power
-# report_constraint
+report_constraint
 
 # generate sdc file
-write_sdc ./Single_Cycle_Top_syn.sdc -version 1.8
+# write_sdc ./Single_Cycle_Top_syn.sdc -version 1.8
 
 # generate sdf file
-write_sdf -version 2.1 -context verilog -load_delay cell ./Single_Cycle_Top_syn.sdf
+# write_sdf -version 2.1 -context verilog -load_delay cell ./Single_Cycle_Top_syn.sdf
 
 # generate verilog netlist
-write -hierarchy -format verilog -output ./Single_Cycle_Top_syn.v
+# write -hierarchy -format verilog -output ./Single_Cycle_Top_syn.v
