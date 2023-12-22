@@ -1,0 +1,4 @@
+./pdk_files/SRAM_32x64_1rw.v
+./rtl/sim_1/Single_Cycle_Top_Tb.v
+./skywater/primitives.v
+Single_Cycle_Top_syn.v

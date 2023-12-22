@@ -1,0 +1,14 @@
+/home/v62970/Documents/ece748-assignment4/part_1/rtl/sim_1/Single_Cycle_Top_Tb.v
+/home/v62970/Documents/ece748-assignment4/part_1/rtl/sources_1/ALU.v
+/home/v62970/Documents/ece748-assignment4/part_1/rtl/sources_1/ALU_Decoder.v
+/home/v62970/Documents/ece748-assignment4/part_1/rtl/sources_1/Control_Unit_Top.v
+/home/v62970/Documents/ece748-assignment4/part_1/rtl/sources_1/Data_Memory.v
+/home/v62970/Documents/ece748-assignment4/part_1/rtl/sources_1/Instruction_Memory.v
+/home/v62970/Documents/ece748-assignment4/part_1/rtl/sources_1/Main_Decoder.v
+/home/v62970/Documents/ece748-assignment4/part_1/rtl/sources_1/Mux.v
+/home/v62970/Documents/ece748-assignment4/part_1/rtl/sources_1/PC.v
+/home/v62970/Documents/ece748-assignment4/part_1/rtl/sources_1/PC_Adder.v
+/home/v62970/Documents/ece748-assignment4/part_1/rtl/sources_1/Register_File.v
+/home/v62970/Documents/ece748-assignment4/part_1/rtl/sources_1/SRAM_32x64_1rw.v
+/home/v62970/Documents/ece748-assignment4/part_1/rtl/sources_1/Sign_Extend.v
+/home/v62970/Documents/ece748-assignment4/part_1/rtl/sources_1/Single_Cycle_Top.v

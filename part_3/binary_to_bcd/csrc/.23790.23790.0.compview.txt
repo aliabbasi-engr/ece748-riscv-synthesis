@@ -1,0 +1,9 @@
+{"vcs1":{"timestamp_begin":1703196026.017930661, "rt":0.84, "ut":0.12, "st":0.13}}
+{"vcselab":{"timestamp_begin":1703196026.910630931, "rt":0.47, "ut":0.16, "st":0.04}}
+{"link":{"timestamp_begin":1703196027.428767109, "rt":0.74, "ut":0.10, "st":0.08}}
+{"SNPS_VCS_INTERNAL_ROOT_START_TIME": 1703196025.783381516}
+{"VCS_COMP_START_TIME": 1703196025.783381516}
+{"VCS_COMP_END_TIME": 1703196028.227329796}
+{"VCS_USER_OPTIONS": "sim_1/bin2bcd_tb.v sources_1/bin2bcd.v"}
+{"vcs1": {"peak_mem": 331488}}
+{"stitch_vcselab": {"peak_mem": 209852}}

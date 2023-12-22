@@ -1,0 +1,60 @@
+Invoking simulator...
+
+./simv -sml=verdi +UVM_VERDI_TRACE=UVM_AWARE +fsdb+gate=off -ucli2Proc -ucli
+debImport "-i" "-simflow" "-dbdir" "./simv.daidir"
+*Verdi* Loading libsscore_vcs202206.so
+
+FSDB Dumper for VCS, Release Verdi_T-2022.06-SP2, Linux x86_64/64bit, 11/22/2022
+(C) 1996 - 2022 by Synopsys, Inc.
+*Verdi* : Create FSDB file '/home/v62970/Documents/ece748-assignment4/part_1/inter.fsdb'
+*Verdi* : Flush all FSDB Files at 0 ps.
+
+*Verdi* : Enable RPC Server(16194)
+
+srcTBInvokeSim
+Chronologic VCS simulator copyright 1991-2022
+Contains Synopsys proprietary information.
+Compiler version T-2022.06-SP2_Full64; Runtime version T-2022.06-SP2_Full64;  Dec 17 18:07 2023
+Warning : License for product VCS-BASE-RUNTIME(947) will expire within 25 days, on: 10-jan-2024.
+If you would like to temporarily disable this message, set 
+ the VCS_LIC_EXPIRE_WARNING environment variable to the number of days
+before expiration that you want this message to start (the minimum is 0).
+Verdi>fsdbDumpvars 1 "Instruction_Memory"  +all +trace_process;fsdbDumpflush 
+
+*Verdi* : Begin traversing the scope (Instruction_Memory), layer (1).
+*Verdi* : Enable +trace_process and +all dumping.
+*Verdi* : End of traversing.
+*Verdi* : Flush all FSDB Files at 0 ps.
+
+Verdi>fsdbDumpvars 1 "Single_Cycle_Top_Tb.Single_Cycle_Top.Register_File"  +all +trace_process;fsdbDumpflush 
+
+*Verdi* : Begin traversing the scope (Single_Cycle_Top_Tb.Single_Cycle_Top.Register_File), layer (1).
+*Verdi* : Enable +trace_process and +all dumping.
+*Verdi* : End of traversing.
+*Verdi* : Flush all FSDB Files at 0 ps.
+
+Verdi>run
+-------------------------------------
+multiplier = 8, multiplicand = 12
+expected_result = 96, result = 96
+Result matches the expected value!
+-------------------------------------
+multiplier = 7, multiplicand = 2
+expected_result = 14, result = 14
+Result matches the expected value!
+-------------------------------------
+multiplier = 12, multiplicand = 2
+expected_result = 24, result = 24
+Result matches the expected value!
+-------------------------------------
+Return 1: No mismatches found!
+-------------------------------------
+$finish called from file "rtl/sim_1/Single_Cycle_Top_Tb.v", line 116.
+$finish at simulation time             12600000
+Simulation complete, time is 12600000 ps.
+Single_Cycle_Top_Tb.v, 116 :         $finish;
+           V C S   S i m u l a t i o n   R e p o r t 
+Time: 12600000 ps
+CPU Time:      0.160 seconds;       Data structure size:   0.0Mb
+Sun Dec 17 19:11:47 2023
+debExit

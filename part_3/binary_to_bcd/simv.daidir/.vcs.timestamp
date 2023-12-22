@@ -1,0 +1,117 @@
+0
+22
+-Mamsrun=
+-Masflags=
+-Mcc=gcc
+-Mcfl= -pipe -fPIC -O -I/CMC/tools/synopsys/vcs_vT-2022.06-SP2/vcs/T-2022.06-SP2/include
+-Mcplusplus=g++
+-Mcrt0=
+-Mcrtn=
+-Mcsrc=
+-Mexternalobj=
+-Mldflags= -rdynamic
+-Mobjects= /CMC/tools/synopsys/vcs_vT-2022.06-SP2/vcs/T-2022.06-SP2/linux64/lib/libvirsim.so /CMC/tools/synopsys/vcs_vT-2022.06-SP2/vcs/T-2022.06-SP2/linux64/lib/liberrorinf.so /CMC/tools/synopsys/vcs_vT-2022.06-SP2/vcs/T-2022.06-SP2/linux64/lib/libsnpsmalloc.so /CMC/tools/synopsys/vcs_vT-2022.06-SP2/vcs/T-2022.06-SP2/linux64/lib/libvfs.so
+-Mout=simv
+-Msaverestoreobj=/CMC/tools/synopsys/vcs_vT-2022.06-SP2/vcs/T-2022.06-SP2/linux64/lib/vcs_save_restore_new.o
+-Msyslibs=-ldl
+-Mvcsaceobjs=
+-Mxcflags= -pipe -fPIC -I/CMC/tools/synopsys/vcs_vT-2022.06-SP2/vcs/T-2022.06-SP2/include
+-Mxllcflags=
+-gen_obj
+-picarchive
+/CMC/tools/synopsys/vcs_vT-2022.06-SP2/vcs/T-2022.06-SP2/linux64/bin/vcs1
+sim_1/bin2bcd_tb.v
+sources_1/bin2bcd.v
+80
+XMODIFIERS=@im=ibus
+XDG_SESSION_ID=194
+XDG_RUNTIME_DIR=/run/user/62970
+XDG_MENU_PREFIX=gnome-
+XDG_CURRENT_DESKTOP=GNOME
+XAUTHORITY=/home/v62970/.Xauthority
+VTE_VERSION=5204
+VMR_MODE_FLAG=32
+VERDI_HOME=/CMC/tools/synopsys/verdi_vT-2022.06-SP2/verdi/T-2022.06-SP2
+VENDOR=unknown
+VCS_TARGET_ARCH=linux64
+VCS_PATHMAP_PRELOAD_DONE=1
+VCS_MX_HOME_INTERNAL=1
+VCS_HOME=/CMC/tools/synopsys/vcs_vT-2022.06-SP2/vcs/T-2022.06-SP2
+VCS_EXEC_DONE=1
+VCS_DEPTH=0
+VCS_ARG_ADDED_FOR_TMP=1
+VCS_ARCH=linux64
+USERNAME=v62970
+UNAME=/bin/uname
+TOOL_HOME=/CMC/tools/synopsys/vcs_vT-2022.06-SP2/vcs/T-2022.06-SP2/linux64
+SSH_AUTH_SOCK=/run/user/62970/keyring/ssh
+SSH_AGENT_PID=107104
+SNPS_VCS_CLANG_PATH=/CMC/tools/synopsys/vcs_vT-2022.06-SP2/vcs/T-2022.06-SP2/linux64/clang
+SNPS_INTERNAL_VCS_LINUX_OS=linux
+SESSION_MANAGER=local/unix:@/tmp/.ICE-unix/107112,unix/unix:/tmp/.ICE-unix/107112
+SCRNAME=vcs
+SCRIPT_NAME=vcs
+QT_IM_MODULE=ibus
+QT_GRAPHICSSYSTEM_CHECKED=1
+QTLIB=/usr/lib64/qt-3.3/lib
+QTINC=/usr/lib64/qt-3.3/include
+QTDIR=/usr/lib64/qt-3.3
+PULSE_SERVER=/home/v62970/.nx/nxdevice/D-1001-3A37195984BDF49E8375FE1B65CEED84/audio/native.socket
+PULSE_SCRIPT=/home/v62970/.nx/nxdevice/D-1001-3A37195984BDF49E8375FE1B65CEED84/audio/default.pa
+PULSE_RUNTIME_PATH=/home/v62970/.nx/nxdevice/D-1001-3A37195984BDF49E8375FE1B65CEED84/audio
+PULSE_CONFIG=/home/v62970/.nx/nxdevice/D-1001-3A37195984BDF49E8375FE1B65CEED84/audio/daemon.conf
+PULSE_CLIENTCONFIG=/home/v62970/.nx/nxdevice/D-1001-3A37195984BDF49E8375FE1B65CEED84/audio/client.conf
+PLATFORM=linux64
+OVA_UUM=0
+OS_LDFLAGS=
+OSTYPE=linux
+NX_TEMP=/tmp
+NX_SYSTEM=/usr/NX
+NX_SESSION_ID=3A37195984BDF49E8375FE1B65CEED84
+NX_RUNNER=/usr/NX/bin/nxrunner
+NX_ROOT=/home/v62970/.nx
+NX_CUPS_BIN=/usr/bin
+NX_CONNECTION=99.245.131.88 58074 172.16.84.96 4000 
+NXDIR=/usr/NX
+NOVAS_HOME=/CMC/tools/synopsys/verdi_vT-2022.06-SP2/verdi/T-2022.06-SP2
+NOVAS_EXECUTABLE_ARCH=LINUX64
+LESSOPEN=||/usr/bin/lesspipe.sh %s
+LC_ALL=C
+IMSETTINGS_MODULE=none
+IMSETTINGS_INTEGRATE_DESKTOP=yes
+HOSTTYPE=x86_64-linux
+GROUP=vcl
+GNOME_TERMINAL_SERVICE=:1.194
+GNOME_TERMINAL_SCREEN=/org/gnome/Terminal/screen/34e5427b_68ad_4600_8503_88ee89d532f3
+GNOME_DESKTOP_SESSION_ID=this-is-deprecated
+GDK_BACKEND=x11
+DBUS_STARTER_BUS_TYPE=session
+DBUS_STARTER_ADDRESS=unix:abstract=/tmp/dbus-6R1nYzFyC2,guid=b90075135d10e7a4b6e2bf91657f3b3d
+DBUS_SESSION_BUS_ADDRESS=unix:abstract=/tmp/dbus-6R1nYzFyC2,guid=b90075135d10e7a4b6e2bf91657f3b3d
+COLORTERM=truecolor
+CMC_XILINX_ARCH=64
+CMC_ST_ARCH=lnx
+CMC_SOURCED=1
+CMC_SNPS_SOURCED=1
+CMC_SNPS_ARCH=amd64
+CMC_SNPS_ARCH3=linux
+CMC_SNPS_ARCH2=AMD.64
+CMC_MNT_ARCH=ixl
+CMC_MNT_ARCH3=aoi
+CMC_MNT_ARCH2=linux_x86_64
+CMC_HOME=/CMC
+CMC_CDS_ARCH=lnx86
+CMC_ANSYS_ARCH=Linux64
+CDS_AUTO_64BIT=ALL
+0
+0
+2
+1703183899 sources_1/bin2bcd.v
+1703183899 sim_1/bin2bcd_tb.v
+4
+1669783182 /CMC/tools/synopsys/vcs_vT-2022.06-SP2/vcs/T-2022.06-SP2/linux64/lib/libvirsim.so
+1669782209 /CMC/tools/synopsys/vcs_vT-2022.06-SP2/vcs/T-2022.06-SP2/linux64/lib/liberrorinf.so
+1669782120 /CMC/tools/synopsys/vcs_vT-2022.06-SP2/vcs/T-2022.06-SP2/linux64/lib/libsnpsmalloc.so
+1669782200 /CMC/tools/synopsys/vcs_vT-2022.06-SP2/vcs/T-2022.06-SP2/linux64/lib/libvfs.so
+1703196028 simv.daidir
+-1 partitionlib

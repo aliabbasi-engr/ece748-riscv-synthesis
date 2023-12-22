@@ -1,0 +1,14 @@
+rtl/sim_1/Single_Cycle_Top_Tb.v
+rtl/sources_1/ALU.v
+rtl/sources_1/ALU_Decoder.v
+rtl/sources_1/Control_Unit_Top.v
+rtl/sources_1/Data_Memory.v
+rtl/sources_1/Instruction_Memory.v
+rtl/sources_1/Main_Decoder.v
+rtl/sources_1/Mux.v
+rtl/sources_1/PC.v
+rtl/sources_1/PC_Adder.v
+rtl/sources_1/Register_File.v
+rtl/sources_1/SRAM_32x64_1rw.v
+rtl/sources_1/Sign_Extend.v
+rtl/sources_1/Single_Cycle_Top.v

@@ -1,0 +1,111 @@
+$date
+	Thu Dec 21 17:00:32 2023
+$end
+
+$version
+	Synopsys VCS version T-2022.06-SP2_Full64
+$end
+
+$timescale
+	1ps
+$end
+
+$comment Csum: 1 ca0c4dc8e4a9a722 $end
+
+
+$scope module bin2bcd_tb $end
+$var reg 1 ! i_clk $end
+$var reg 1 " i_rstn $end
+$var reg 4 # i_bin [3:0] $end
+$var wire 5 $ o_bcd [4:0] $end
+$var reg 4 % bin [3:0] $end
+$var reg 8 & i [7:0] $end
+
+$scope begin tb_block_main $end
+$upscope $end
+
+
+$scope module bin2bcd_inst $end
+$var wire 1 ! i_clk $end
+$var wire 1 " i_rstn $end
+$var wire 4 # i_bin [3:0] $end
+$var wire 5 $ o_bcd [4:0] $end
+$var reg 4 ' bin_reg [3:0] $end
+$var reg 5 $ bcd_reg [4:0] $end
+$var integer 32 ( i $end
+$var integer 32 ) j $end
+$upscope $end
+
+$upscope $end
+
+$enddefinitions $end
+
+#0
+$dumpvars
+0!
+0"
+bxxxxx $
+b0000 %
+bxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx (
+bxxxx '
+b00000000 &
+b0000 #
+bxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx )
+$end
+#100
+b0000 '
+b00000 $
+#10000
+1!
+#20000
+b1000 #
+0!
+1"
+#30000
+1!
+#40000
+0!
+b1000 '
+b01000 $
+b00000000000000000000000000000001 (
+b00000000000000000000000000000001 )
+#50000
+1!
+#60000
+b00000001 &
+b1100 #
+0!
+b1100 '
+b10010 $
+#70000
+1!
+#80000
+0!
+#90000
+1!
+#100000
+b00000010 &
+b0111 #
+0!
+b0111 '
+b00111 $
+#110000
+1!
+#120000
+0!
+#130000
+1!
+#140000
+b00000011 &
+b0010 #
+0!
+b0010 '
+b00010 $
+#150000
+1!
+#160000
+0!
+#170000
+1!
+#180000
+b00000100 &

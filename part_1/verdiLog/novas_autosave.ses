@@ -1,0 +1,69 @@
+@verdi rc file Version 1.0
+[General]
+saveDB = TRUE
+relativePath = FALSE
+saveSingleView = FALSE
+saveNWaveWinId = 
+VerdiVersion = Verdi_T-2022.06-SP2
+[KeyNote]
+Line1 = Automatic Backup 0
+Line2 = Save Open Database Information: Yes
+Line3 = Path Option: Absolute Paths
+Line4 = Windows Option: All Windows
+[OneSearch]
+isExisted = TRUE
+[TestBench]
+ConstrViewShow = 0
+InherViewShow = 0
+FSDBMsgShow = 0
+AnnotationShow = 0
+Console = TRUE
+powerDumped = 0
+[fusa]
+fdb_server = 
+fdb_proj = 
+fdb_campaign = 
+fdb_tool = 
+[hb]
+postSimFile = /home/v62970/Documents/ece748-assignment4/part_1/inter.fsdb
+syncTime = 200000
+viewport = 0 19 1920 960 0 0 209 898
+activeNode = "Single_Cycle_Top_Tb.tb_block_main"
+activeScope = "Single_Cycle_Top_Tb.tb_block_main"
+activeFile = "rtl/sim_1/Single_Cycle_Top_Tb.v"
+interactiveMode = False
+viewType = Source
+simulatorMode = False
+sourceBeginLine = 97
+baMode = False
+srcLineNum = True
+AutoWrap = True
+IdentifyFalseLogic = False
+syncSignal = False
+traceMode = Hierarchical
+showTraceInSchema = True
+paMode = False
+funcMode = False
+powerAwareAnnot = True
+safetyAwareAnnot = True
+amsAnnot = True
+DnDtraceCrossHierOnly = True
+leadingZero = False
+signalPane = False
+SourceVerticalScrollLines = 5
+Scope1 = "Single_Cycle_Top_Tb.tb_block_main"
+Scope2 = "Data_Memory"
+rangeSelection = 116 116 1 4 1 1
+sdfCheckUndef = FALSE
+simFlow = FALSE
+[hb.design]
+importCmd = "-simflow" "-dbdir" "./simv.daidir" 
+invokeDir = /home/v62970/Documents/ece748-assignment4/part_1
+[hb.sourceTab.1]
+scope = Single_Cycle_Top_Tb.tb_block_main
+File = /home/v62970/Documents/ece748-assignment4/part_1/rtl/sim_1/Single_Cycle_Top_Tb.v
+Line = 98
+[nMemoryManager]
+WaveformFile = /home/v62970/Documents/ece748-assignment4/part_1/inter.fsdb
+UserActionNum = 0
+nMemWindowNum = 0
