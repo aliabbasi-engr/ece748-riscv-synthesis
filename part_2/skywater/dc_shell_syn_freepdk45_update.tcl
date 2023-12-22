@@ -13,10 +13,10 @@
 #set link_library "~/mydata/04_syn_freepdk45/pdk_files/SRAM_32x64_1rw_TT_1p1V_25C.db ~/mydata/04_syn_freepdk45/pdk_files/gscl45nm.db dw_foundation.sldb standard.sldb"
 
 # specify libraries
-set target_library "~/mydata/04_syn_freepdk45/skywater/stdcells.db ~/mydata/04_syn_freepdk45/pdk_files/SRAM_32x64_1rw_TT_1p1V_25C.db"
+set target_library "./skywater/stdcells.db ./pdk_files/SRAM_32x64_1rw_TT_1p1V_25C.db"
 set symbol_library "generic.sdb"
 set synthetic_library "dw_foundation.sldb standard.sldb"
-set link_library "~/mydata/04_syn_freepdk45/skywater/stdcells.db ~/mydata/04_syn_freepdk45/pdk_files/SRAM_32x64_1rw_TT_1p1V_25C.db  dw_foundation.sldb standard.sldb"
+set link_library "./skywater/stdcells.db ./pdk_files/SRAM_32x64_1rw_TT_1p1V_25C.db  dw_foundation.sldb standard.sldb"
 
 # read design
 # analysis and elaboration are done automatically
