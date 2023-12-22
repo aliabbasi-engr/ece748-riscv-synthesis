@@ -11,13 +11,13 @@
 
 # specify libraries 
 
-set target_library "~/mydata/04_syn_freepdk45/pdk_files/gscl45nm.db" 
+set target_library "./gscl45nm.db" 
 
 set symbol_library "generic.sdb" 
 
 set synthetic_library "dw_foundation.sldb standard.sldb" 
 
-set link_library "~/mydata/04_syn_freepdk45/pdk_files/gscl45nm.db dw_foundation.sldb standard.sldb" 
+set link_library "./gscl45nm.db dw_foundation.sldb standard.sldb" 
 
 # read design 
 # analysis and elaboration are done automatically 
