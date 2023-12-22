@@ -29,11 +29,11 @@ set_input_delay 0.02 -clock clk [all_inputs]
 set_output_delay 0.01 -clock clk [all_outputs]
 
 # set design constraints
-set_max_transition 2000 [get_designs Single_Cycle_Top]
+set_max_transition 1 [get_designs Single_Cycle_Top]
 set_max_fanout 100 [all_inputs]
 set_fanout_load 0.001 [all_outputs]
 set high_fanout_net_threshold 100
-set_max_capacitance 50000 [all_outputs]
+set_max_capacitance 10 [all_outputs]
 set_max_area 50000
 
 # resolve multiple refenreces

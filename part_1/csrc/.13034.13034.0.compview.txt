@@ -1,9 +1,0 @@
-{"vcs1":{"timestamp_begin":1702854389.665372291, "rt":0.29, "ut":0.16, "st":0.08}}
-{"vcselab":{"timestamp_begin":1702854390.003855927, "rt":0.27, "ut":0.19, "st":0.06}}
-{"link":{"timestamp_begin":1702854390.315039209, "rt":0.15, "ut":0.11, "st":0.03}}
-{"SNPS_VCS_INTERNAL_ROOT_START_TIME": 1702854389.219544231}
-{"VCS_COMP_START_TIME": 1702854389.219544231}
-{"VCS_COMP_END_TIME": 1702854390.549596539}
-{"VCS_USER_OPTIONS": "-debug_access -debug_all rtl/sources_1/ALU_Decoder.v rtl/sources_1/ALU.v rtl/sources_1/Control_Unit_Top.v rtl/sources_1/Data_Memory.v rtl/sources_1/Instruction_Memory.v rtl/sources_1/Main_Decoder.v rtl/sources_1/Mux.v rtl/sources_1/PC_Adder.v rtl/sources_1/PC.v rtl/sources_1/Register_File.v rtl/sources_1/Sign_Extend.v rtl/sources_1/Single_Cycle_Top.v rtl/sources_1/SRAM_32x64_1rw.v rtl/sim_1/Single_Cycle_Top_Tb.v"}
-{"vcs1": {"peak_mem": 331588}}
-{"stitch_vcselab": {"peak_mem": 226276}}

@@ -1,3 +1,0 @@
-Command Line: /CMC/tools/synopsys/vcs_vT-2022.06-SP2/vcs/T-2022.06-SP2/linux64/bin/elabcom -logdir simv.daidir/elabcomLog -simvdaidir simv.daidir -lib simv.daidir/work -saveLevel -elab simv.daidir/kdb -simflow -simdir simv.daidir/kdb_libs -topfile simv.daidir/.elabcomTopFile -ssz -ssv -ssy -Lf work +disable_message+C00388+C00389
-uname(Linux vcl-vm0-96 3.10.0-1160.92.1.el7.x86_64 #1 SMP Tue Jun 20 11:48:01 UTC 2023 x86_64)
-au time 0.096415 0.011439 0.017753 delta 90046464 90046464 total 275574784 275574784
