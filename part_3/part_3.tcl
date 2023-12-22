@@ -1,5 +1,3 @@
-# TODO: Register all inputs and outputs of the BCD2bin 
-
 #source Synopsys Design Compiler 
 
 # source /CMC/scripts/synopsys.syn.2022.12.csh 
