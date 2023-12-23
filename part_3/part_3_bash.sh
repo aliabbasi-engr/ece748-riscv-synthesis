@@ -11,8 +11,8 @@ echo "Param, Fmax, Area, Power" > results.csv
 # loop through supplied parameters
 for param in "$@"; do
 	echo "parameter: $param"
-	# modify testbench file to change parameter
-	sed -i "s/W = [0-9]\+/W = $param/" bin2bcd.v
+	# modify verilog file to change parameter
+	sed -i "s/W = [0-9]\+/W = $param/" ./binary_to_bcd/sources_1/bin2bcd.v
 	# run file and scrape statistics
 	clk_period=0.1
 	while true; do
